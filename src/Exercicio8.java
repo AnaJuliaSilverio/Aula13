@@ -6,7 +6,7 @@ public class Exercicio8 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         List<Double> salarios = new ArrayList<>();
-        double valorSalarios=0,reajuste;
+        double valorSalarios,reajuste;
         char pergunta;
 
         while (true){
@@ -17,8 +17,10 @@ public class Exercicio8 {
             }
             salarios.add(valorSalarios);
         }
+
         System.out.println("Digite o valor dos reajustes em porcentagem: ");
         reajuste = sc.nextDouble();
+
         while (true){
             System.out.println("Voce deseja aumentar ou diminuir o salario? Para aumentar digite 'a' e para diminuir 'd' ");
             pergunta = sc.next().charAt(0);
@@ -34,10 +36,11 @@ public class Exercicio8 {
             }
         }
 
-
+        //reajustando os salarios
         for (int i = 0; i < salarios.size(); i++) {
             salarios.set(i,(salarios.get(i)*reajuste));
         }
+        //imprimindo salarioa reajustados
         System.out.println("Salarios reajustados");
         for (int i = 0; i < salarios.size(); i++) {
 
